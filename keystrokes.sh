@@ -71,7 +71,6 @@ handle_key_press() {
             ;;
     esac
 }
-
 while true; do
     read -n 1 -s key
     if [[ "$key" == $'\x1b' ]]; then
