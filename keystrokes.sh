@@ -50,7 +50,7 @@ handle_key_press() {
             echo "Backspace key pressed"
             echo -ne "\0\0\x29\0\0\0\0\0" > /dev/hidg0 && echo -ne "\0\0\0\0\0\0\0\0" > /dev/hidg0
             ;;
-         $'[C')
+        $'[C')
             echo "Right Arrow key pressed"
             echo -ne "\0\0\x4f\0\0\0\0\0" > /dev/hidg0 && echo -ne "\0\0\0\0\0\0\0\0" > /dev/hidg0
             ;;
