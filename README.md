@@ -10,3 +10,7 @@ Primary aim for now is to drive UI remotely on a STB with USB HID keyboard suppo
 For reference USB HID Usage Codes can be found here 
 
 https://usb.org/sites/default/files/hut1_5.pdf
+
+Usage:
+
+sudo ./keystrokes.sh
