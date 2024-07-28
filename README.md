@@ -7,6 +7,6 @@ https://myraspberrypiadventure.blogspot.com/2024/07/usb-hid-gadget-with-raspberr
 
 Primary aim for now is to drive UI remotely on a STB with USB HID keyboard support.
 
-For reference USB HID Scan Code table can be found here 
+For reference USB HID Usage Codes can be found here 
 
-https://download.microsoft.com/download/1/6/1/161ba512-40e2-4cc9-843a-923143f3456c/translate.pdf
+https://usb.org/sites/default/files/hut1_5.pdf
