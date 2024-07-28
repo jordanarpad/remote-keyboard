@@ -42,27 +42,27 @@ handle_key_press() {
             echo "Number 0 key pressed"
             echo -ne "\0\0\x27\0\0\0\0\0" > /dev/hidg0 && echo -ne "\0\0\0\0\0\0\0\0" > /dev/hidg0
             ;;
-        'n')
-            echo "n key pressed"
+        '')
+            echo "Enter key pressed"
             echo -ne "\0\0\x28\0\0\0\0\0" > /dev/hidg0 && echo -ne "\0\0\0\0\0\0\0\0" > /dev/hidg0
             ;;
-        'b')
-            echo "b key pressed"
+        $'\x7f')
+            echo "Backspace key pressed"
             echo -ne "\0\0\x29\0\0\0\0\0" > /dev/hidg0 && echo -ne "\0\0\0\0\0\0\0\0" > /dev/hidg0
             ;;
-        $'\x1b[C')
+         $'[C')
             echo "Right Arrow key pressed"
             echo -ne "\0\0\x4f\0\0\0\0\0" > /dev/hidg0 && echo -ne "\0\0\0\0\0\0\0\0" > /dev/hidg0
             ;;
-        $'\x1b[D')
+        $'[D')
             echo "Left Arrow key pressed"
             echo -ne "\0\0\x50\0\0\0\0\0" > /dev/hidg0 && echo -ne "\0\0\0\0\0\0\0\0" > /dev/hidg0
             ;;
-        $'\x1b[B')
+        $'[B')
             echo "Down Arrow key pressed"
             echo -ne "\0\0\x51\0\0\0\0\0" > /dev/hidg0 && echo -ne "\0\0\0\0\0\0\0\0" > /dev/hidg0
             ;;
-        $'\x1b[A')
+        $'[A')
             echo "Up Arrow key pressed"
             echo -ne "\0\0\x52\0\0\0\0\0" > /dev/hidg0 && echo -ne "\0\0\0\0\0\0\0\0" > /dev/hidg0
             ;;
@@ -74,9 +74,7 @@ handle_key_press() {
 while true; do
     read -n 1 -s key
     if [[ "$key" == $'\x1b' ]]; then
-        read -n 2 -s rest
-        key+="$rest"
+        read -n 2 -s key
     fi
-    echo "Key code: $key"
     handle_key_press "$key"
 done
