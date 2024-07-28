@@ -11,6 +11,7 @@ For reference USB HID Usage Codes can be found here
 
 https://usb.org/sites/default/files/hut1_5.pdf
 
-Usage:
-
+### Usage:
+```
 sudo ./keystrokes.sh
+```
